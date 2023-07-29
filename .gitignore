@@ -1,0 +1,4 @@
+main.c
+*.o
+test.c
+a.out
