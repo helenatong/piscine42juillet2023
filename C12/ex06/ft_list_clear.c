@@ -12,16 +12,16 @@
 */
 void ft_list_clear(t_list *begin_list, void (*free_fct)(void*))
 {
-    t_list *ptr_downstream;
+    t_list *temp;
 
-    ptr_downstream = begin_list;
+    temp = begin_list;
     if (!free_fct)
         return ;
-    while (ptr_downstream)
+    while (temp)
     {
-        ptr_downstream = ptr_downstream->next;
+        temp = temp->next;
         free_fct(begin_list->data);
         free(begin_list);
-        begin_list = ptr_downstream;
+        begin_list = temp;
     }
 }
